@@ -1,31 +1,79 @@
-<!doctype html>
-<html>
+
+<!DOCTYPE html>
+<html lang="en">
 <head>
-<meta charset="utf-8">
-<title>Smartchores</title>
-	<link rel="stylesheet" href="../css/main.css">
+    <meta charset="UTF-8">
+    <title>Maria's Web Developer Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <script>
+        function showTab(tabId) {
+            var tabs = document.querySelectorAll('.tab-content');
+            tabs.forEach(function(tab) {
+                tab.style.display = 'none';
+            });
+            document.getElementById(tabId).style.display = 'block';
+
+            var navLinks = document.querySelectorAll('.nav-link');
+            navLinks.forEach(function(link) {
+                link.classList.remove('active');
+            });
+            document.getElementById(tabId + '-link').classList.add('active');
+        }
+
+        window.onload = function() {
+            showTab('about');
+        };
+    </script>
 </head>
 <body>
-<header><br>
-<br>
+    <header>
+        <h1>Maria</h1>
+        <p>Aspiring Web Developer | Eager to Learn & Grow</p>
+    </header>
 
-		<div class="sm">
-		<a href="index.php"><img src="../images/logo.png" alt=""></a>
-	</div><br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
+    <nav class="navbar">
+        <button class="nav-link" id="about-link" onclick="showTab('about')">About Me</button>
+        <button class="nav-link" id="projects-link" onclick="showTab('projects')">Projects</button>
+        <button class="nav-link" id="contact-link" onclick="showTab('contact')">Contact</button>
+    </nav>
 
+    <section id="about" class="tab-content">
+        <div class="section-wrapper">
+            <h2>About Me</h2>
+            <p>Hi, I’m Maria — a passionate and aspiring web developer. Although I’m just starting out in the professional world, I’ve already worked with a real client and developed a full website as part of my final year project. I'm currently focused on building clean, responsive websites and learning more about modern front-end tools and frameworks.</p>
+        </div>
+    </section>
 
-			<div class = "nav">	
-<a href="index.php" class="item">HOME</a>
-<a href="chores.html" class="item">CHORES AVAILABLE</a>
-<a href="crsignup.php" class="item">BECOME A CHORE RUNNER</a>
-<a href="cologin.php" class="item">LOGIN</a>
-		</div>
-	</header>
+    <section id="projects" class="tab-content">
+        <div class="section-wrapper">
+            <h2>Projects</h2>
+
+            <div class="project">
+                <h3>Smartchores – Final Year Project</h3>
+                <p>Smartchores is a custom-built web platform that functions similarly to TaskRabbit. It enables users to post tasks and connect with others who can complete them. The site supports various task categories including moving help, babysitting, household chores, and remote jobs.</p>
+                <p><strong>My Role:</strong> Full-stack developer – designed, built, and deployed the entire application.</p>
+                <p><strong>Features:</strong> User registration, task posting, categorization, and user-task matching logic.</p>
+                <p><strong>Tools Used:</strong> HTML5, CSS3, JavaScript</p>
+                <p><strong>Live Demo:</strong> [Insert your live link]</p>
+                <p><strong>Code:</strong> [Insert your GitHub link]</p>
+            </div>
+
+            <div class="project">
+                <h3>Sri Weeras – Client Website</h3>
+                <p>Developed a corporate website for Sri Weeras, a mask manufacturing company, to showcase their products and provide company information.</p>
+                <p><strong>Tools Used:</strong> HTML, CSS, Bootstrap</p>
+                <p><strong>Live Site:</strong> [Insert client website link]</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="tab-content">
+        <div class="section-wrapper">
+            <h2>Contact</h2>
+            <p>Email: your.email@example.com</p>
+            <p>GitHub: <a href="https://github.com/yourusername" target="_blank">github.com/yourusername</a></p>
+            <p>LinkedIn: <a href="https://linkedin.com/in/yourprofile" target="_blank">linkedin.com/in/yourprofile</a></p>
+        </div>
+    </section>
 </body>
 </html>
