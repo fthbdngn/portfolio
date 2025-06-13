@@ -5,6 +5,25 @@
     <meta charset="UTF-8">
     <title>Maria's Web Developer Portfolio</title>
     <link rel="stylesheet" href="style.css">
+    <script>
+        function showTab(tabId) {
+            var tabs = document.querySelectorAll('.tab-content');
+            tabs.forEach(function(tab) {
+                tab.style.display = 'none';
+            });
+            document.getElementById(tabId).style.display = 'block';
+
+            var navLinks = document.querySelectorAll('.nav-link');
+            navLinks.forEach(function(link) {
+                link.classList.remove('active');
+            });
+            document.getElementById(tabId + '-link').classList.add('active');
+        }
+
+        window.onload = function() {
+            showTab('about');
+        };
+    </script>
 </head>
 <body>
     <header>
@@ -12,16 +31,20 @@
         <p>Aspiring Web Developer | Eager to Learn & Grow</p>
     </header>
 
-    <section id="about">
+    <nav class="navbar">
+        <button class="nav-link" id="about-link" onclick="showTab('about')">About Me</button>
+        <button class="nav-link" id="projects-link" onclick="showTab('projects')">Projects</button>
+        <button class="nav-link" id="contact-link" onclick="showTab('contact')">Contact</button>
+    </nav>
+
+    <section id="about" class="tab-content">
         <div class="section-wrapper">
             <h2>About Me</h2>
             <p>Hi, I’m Maria — a passionate and aspiring web developer. Although I’m just starting out in the professional world, I’ve already worked with a real client and developed a full website as part of my final year project. I'm currently focused on building clean, responsive websites and learning more about modern front-end tools and frameworks.</p>
         </div>
     </section>
 
-    <hr class="divider">
-
-    <section id="projects">
+    <section id="projects" class="tab-content">
         <div class="section-wrapper">
             <h2>Projects</h2>
 
@@ -44,9 +67,7 @@
         </div>
     </section>
 
-    <hr class="divider">
-
-    <section id="contact">
+    <section id="contact" class="tab-content">
         <div class="section-wrapper">
             <h2>Contact</h2>
             <p>Email: your.email@example.com</p>
@@ -56,4 +77,3 @@
     </section>
 </body>
 </html>
-
